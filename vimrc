@@ -4,8 +4,8 @@ set expandtab
 filetype on
 filetype indent on
 filetype plugin on
+set fileencodings=utf8,gbk,default,latin1
 set fileencoding=utf-8
-set tags=~/tmp/nginx-0.7.67/src/nginx-tags
 set showmatch
 set incsearch
 set foldmethod=marker
