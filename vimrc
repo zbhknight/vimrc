@@ -14,7 +14,7 @@ map <F8> :NERDTreeToggle<cr>
 map <F7> :TlistToggle<cr>
 
 """""""""""""""""""""""""""'
-""    ¡Á??¡¥21??¨¤¡§o?       "
+""    Â¡Ã??Â¡Â¥21??Â¨Â¤Â¡Â§o?       "
 """""""""""""""""""""""""""""
 ":inoremap ( ()<ESC>i
 ":inoremap { {}<ESC>i
@@ -75,3 +75,16 @@ let g:indentLine_color_term = 239
     endif
 " Setting up Vundle - the vim plugin bundler end
 
+nnoremap <C-\> <Esc>:exe "ptjump " . expand("<cword>")<Esc>
+nnoremap <C-]> <Esc>:exe "tselect " . expand("<cword>")<Esc>
+nnoremap g] g<C-]>
+
+augroup previewWindowPosition
+   au!
+   autocmd BufWinEnter * call PreviewWindowPosition()
+augroup END
+function! PreviewWindowPosition()
+   if &previewwindow
+      wincmd L
+   endif
+endfunction
